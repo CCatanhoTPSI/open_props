@@ -6,7 +6,9 @@
       href="https://cdn.jsdelivr.net/npm/open-props@1.7.23/open-props.min.css"
     />
     <style>
-        /* Size open props */
+        @media screen and (max-width: 600px){
+        body {background-color: var(--yellow-5);}
+        }
       .card {
         border: solid var(--border-size-5);
         background-color: var(--surface-6);
@@ -18,7 +20,6 @@
         margin-top: 20px;
         margin-bottom: 20px;        
       }
-      /*  */
       .openpropsfont {
         font-family: var(--font-antique);
         font-size: var(--font-size-3);
@@ -26,19 +27,33 @@
       }
       .card-container {
         display: flex;
-        flex-direction: row;
-      }
+        }
+        @media screen and (max-width: 600px) {
+            
+            .card-container-column {
+                flex-direction: column;
+            }
+        }
       .footer {
         background-color: var(--surface-3);
         padding: var(--size-2);
         text-align: center;
         margin-top: var(--size-7);
       }
+      @media screen and (max-width: 700px) {
+            .sidebar {
+                background-color: var(--surface-5);
+                display: none;
+            }
+        }
     </style>
   </head>
   <body>
         <h1>Titulo da nossa página</h1>
-        <div class="card-container">
+        <div class="sidebar">
+            <p>Sidebar content goes here.</p>
+        </div>
+        <div class="card-container card-container-column">
                 <div class="card">
                     <p class="openpropsfont">This is simple card component using Open Props.</p>
                 </div>
